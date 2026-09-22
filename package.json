@@ -1,7 +1,7 @@
 {
   "name": "dsh-plugin-websearch-tavily",
   "version": "0.1.0",
-  "description": "DSH web search provider backed by the Tavily Search API",
+  "description": "Tavily-backed web search provider for DeepSeek Harness - registers the tavily-search web seam provider. | 中文：为 DSH 接入 Tavily 联网搜索的 provider，注册 tavily-search 搜索能力。",
   "main": "lib/index.js",
   "type": "module",
   "dependencies": {},
@@ -13,7 +13,9 @@
   "files": [
     "lib/",
     "cordis.patch.yml",
-    "README.md"
+    "README.md",
+    "lib",
+    "LICENSE"
   ],
   "license": "MIT"
 }
