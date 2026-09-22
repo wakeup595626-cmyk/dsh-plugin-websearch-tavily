@@ -1,0 +1,10 @@
+# dsh-plugin-websearch-tavily bundle patch:
+#   1) register this plugin as a loader entry, and
+#   2) select its provider as the web search default.
+# Removing this bundle from the profile reverts both changes.
+- insert:
+    - id: web-search-tavily
+      name: 'dsh-plugin-websearch-tavily'
+- id: web
+  config:
+    searchProvider: tavily-search
