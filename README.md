@@ -6,8 +6,8 @@ A **Tavily-backed web search provider** for the [DeepSeek Harness](https://githu
 
 Registers a web search provider under the stable id `tavily-search` and selects it as the profile's default search provider through the bundled `cordis.patch.yml`.
 
-- Calls `POST https://api.tavily.com/search` with bearer auth and returns Tavily's structured `results[]` (title, url, content, published_date)  a shape built for AI agents.
-- Credentials are resolved **per search and never retained**, in this order: literal `apiKey` in the plugin config  `credentials.resolve(TAVILY_API_KEY)`  `credentials.resolve(DEEPSEEK_API_KEY)` as a fallback.
+- Calls `POST https://api.tavily.com/search` with bearer auth and returns Tavily's structured `results[]` (title, url, content, published_date) — a shape built for AI agents.
+- Credentials are resolved **per search and never retained**, in this order: literal `apiKey` in the plugin config — `credentials.resolve(TAVILY_API_KEY)` — `credentials.resolve(DEEPSEEK_API_KEY)` as a fallback.
 - Removing the bundle from the profile reverts both the provider registration and the default-provider change.
 
 ## Install

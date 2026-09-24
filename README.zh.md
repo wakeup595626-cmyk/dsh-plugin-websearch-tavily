@@ -7,7 +7,7 @@
 以稳定 id `tavily-search` 注册一个联网搜索 provider，并通过随包提供的 `cordis.patch.yml` 把它设为该 profile 的默认搜索 provider。
 
 - 调用 `POST https://api.tavily.com/search`（bearer 认证），返回 Tavily 结构化的 `results[]`（title、url、content、published_date）这种结构正是为 AI agent 设计的。
-- 凭据**按次解析、绝不保存**，顺序为：插件 config 中的字面量 `apiKey`  `credentials.resolve(TAVILY_API_KEY)`  兜底 `credentials.resolve(DEEPSEEK_API_KEY)`。
+- 凭据**按次解析、绝不保存**，顺序为：插件 config 中的字面量 `apiKey` — `credentials.resolve(TAVILY_API_KEY)` — 兜底 `credentials.resolve(DEEPSEEK_API_KEY)`。
 - 从 profile 中移除该 bundle，即可同时撤销 provider 注册与默认搜索设置。
 
 ## 安装
