@@ -1,7 +1,7 @@
 {
   "name": "dsh-plugin-websearch-tavily",
   "version": "0.1.0",
-  "description": "Tavily-backed web search provider for DeepSeek Harness - registers the tavily-search web seam provider. | 中文：为 DSH 接入 Tavily 联网搜索的 provider，注册 tavily-search 搜索能力。",
+  "description": "Tavily-backed web search provider for DeepSeek Harness. | 中文：为 DSH 接入 Tavily 联网搜索的 provider，注册 tavily-search。",
   "main": "lib/index.js",
   "type": "module",
   "dependencies": {},
@@ -17,5 +17,21 @@
     "lib",
     "LICENSE"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "web-search",
+    "tavily"
+  ],
+  "homepage": "https://github.com/wakeup595626-cmyk/dsh-plugin-websearch-tavily#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wakeup595626-cmyk/dsh-plugin-websearch-tavily.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wakeup595626-cmyk/dsh-plugin-websearch-tavily/issues"
+  },
+  "author": "wakeUp595626-cmyk"
 }
