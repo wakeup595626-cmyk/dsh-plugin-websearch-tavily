@@ -1,49 +1,49 @@
 # dsh-plugin-websearch-tavily
 
-English | [中文](README.zh.md)
+**中文** | [English](README.en.md)
 
-A **Tavily-backed web search provider** for the [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) web seam.
+为 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) 的 web seam 提供 **Tavily 联网搜索能力**。
 
-Registers a web search provider under the stable id `tavily-search` and selects it as the profile's default search provider through the bundled `cordis.patch.yml`.
+以稳定 id `tavily-search` 注册一个联网搜索 provider，并通过随包提供的 `cordis.patch.yml` 把它设为该 profile 的默认搜索 provider。
 
-- Calls `POST https://api.tavily.com/search` with bearer auth and returns Tavily's structured `results[]` (title, url, content, published_date) — a shape built for AI agents.
-- Credentials are resolved **per search and never retained**, in this order: literal `apiKey` in the plugin config — `credentials.resolve(TAVILY_API_KEY)` — `credentials.resolve(DEEPSEEK_API_KEY)` as a fallback.
-- Removing the bundle from the profile reverts both the provider registration and the default-provider change.
+- 调用 `POST https://api.tavily.com/search`（bearer 认证），返回 Tavily 结构化的 `results[]`（title、url、content、published_date）——这种结构正是为 AI agent 设计的。
+- 凭据**按次解析、绝不保存**，顺序为：插件 config 中的字面量 `apiKey` — `credentials.resolve(TAVILY_API_KEY)` — 兜底 `credentials.resolve(DEEPSEEK_API_KEY)`。
+- 从 profile 中移除该 bundle，即可同时撤销 provider 注册与默认搜索设置。
 
-## Install
+## 安装
 
 ```sh
 dsh plugin --profile web add github:wakeup595626-cmyk/dsh-plugin-websearch-tavily
 ```
 
-## Usage
+## 使用
 
-1. Obtain a Tavily API key (the free tier covers roughly 1000 basic searches per month).
-2. Provide it via the plugin config or by exposing `TAVILY_API_KEY` to the host.
-3. Ask the agent anything that requires a web search.
+1. 获取 Tavily API Key（免费额度约每月 1000 次基础搜索）。
+2. 通过插件 config 传入，或让 host 能解析到 `TAVILY_API_KEY`。
+3. 像平常一样向 agent 提问需要联网搜索的内容。
 
-## Requirements
+## 环境要求
 
-- A [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) installation
-- A Tavily API key of your own
+- 已安装 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness)
+- 你自己的 Tavily API Key
 
-## Third-party notices
+## 第三方声明
 
-This plugin talks to the Tavily search API at runtime, which requires your own API key and is governed by Tavily's terms of service. No third-party code is bundled.
+本插件在运行时调用 Tavily 搜索 API，需要你自己的 API Key，并受 Tavily 服务条款约束。包内不含任何第三方代码。
 
-See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+详见 [THIRD_PARTY_NOTICES.zh.md](THIRD_PARTY_NOTICES.zh.md)（[English](THIRD_PARTY_NOTICES.md)）。
 
-## Community and support
+## 社区与支持
 
-- Report bugs and ask questions through [GitHub Issues](https://github.com/wakeup595626-cmyk/dsh-plugin-websearch-tavily/issues).
-- Add the [`dsh-plugin`](https://github.com/topics/dsh-plugin) topic to your own plugin repository for discoverability.
-- Browse the wider ecosystem at [awesome-dsh-plugin.com](https://awesome-dsh-plugin.com).
+- 通过 [GitHub Issues](https://github.com/wakeup595626-cmyk/dsh-plugin-websearch-tavily/issues) 报告问题与提问。
+- 为你自己的插件仓库添加 [`dsh-plugin`](https://github.com/topics/dsh-plugin) 话题，便于被发现。
+- 在 [awesome-dsh-plugin.com](https://awesome-dsh-plugin.com) 浏览更广阔的插件生态。
 
-## Contributing
+## 参与贡献
 
-See [CONTRIBUTING.md](CONTRIBUTING.md).
+参见 [CONTRIBUTING.zh.md](CONTRIBUTING.zh.md)（[English](CONTRIBUTING.md)）。
 
-## Citation
+## 引用
 
 ```bibtex
 @misc{dsh-plugin-websearch-tavily,
@@ -55,6 +55,6 @@ See [CONTRIBUTING.md](CONTRIBUTING.md).
 }
 ```
 
-## License
+## 许可证
 
 [MIT](LICENSE)
